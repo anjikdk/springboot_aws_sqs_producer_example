@@ -1,5 +1,7 @@
 package com.example.springboot.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +34,24 @@ public class Producer {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonString = mapper.writeValueAsString(student);
-			queueMessagingTemplate.send(endPoint, MessageBuilder.withPayload(jsonString).build());
+//			queueMessagingTemplate.send(endPoint, MessageBuilder.withPayload(jsonString).build());
+			queueMessagingTemplate.convertAndSend(endPoint, student);
 			logger.info("Message sent successfully  " + jsonString);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return student;
+	}
+	
+	@PostMapping("/messages")
+	public List<Student> sendMessages(@RequestBody List<Student> students) {
+
+		try {
+			queueMessagingTemplate.convertAndSend(endPoint, students);
+			logger.info("Message sent successfully  " + students);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return students;
 	}
 }
