@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot_aws_sqs_example</artifactId>
+	<artifactId>springboot_aws_sqs_producer_example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot</name>
-	<description>Demo project for Spring Boot AWS SQS</description>
+	<description>Demo project for Spring Boot AWS SQS Producer</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

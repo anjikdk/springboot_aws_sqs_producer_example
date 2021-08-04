@@ -10,8 +10,8 @@ import io.swagger.v3.oas.annotations.info.Info;
 @SpringBootApplication(exclude = { ContextStackAutoConfiguration.class })
 @OpenAPIDefinition(
 		  info = @Info(
-		  title = "Springboot CRUD Example",
-		  description = "In this project we can see all CRUD operations")
+		  title = "Springboot AWS SQS Producer Example",
+		  description = "In this project we can see AWS SQS Producer Examples")
 		)
 public class SpringbootApplication {
 
